@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "wdio wdio.conf.js --spec ./features/**/*.feature",
-    "testalert": "wdio wdio.conf.js --spec ./features/alertBox/*.feature",
-    "testsmoke": "wdio wdio.conf.js --cucumberOpts.tagExpression='@smoke'"
+    "test": "wdio config/wdio.conf.js --spec ./features/**/*.feature",
+    "testalert": "wdio config/wdio.conf.js --spec ./features/alertBox/*.feature",
+    "testsmoke": "wdio config/wdio.conf.js --cucumberOpts.tagExpression='@smoke'"
 
   },
   "repository": {
