@@ -5,8 +5,8 @@ exports.config = {
     // ====================
     //
 
-    user: "franklynpandolfj_TqnKRx",
-    key: "vgFgcAfcSxGnaHfSfnhx",
+    user: "xxxxxx",
+    key: "xxxxxx",
     //
     // ==================
     // Specify Test Files
