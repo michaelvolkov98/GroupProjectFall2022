@@ -7,6 +7,22 @@ class Commands {
      * Input: locator
      */
 
+    async acceptAlert () {
+        await this.waitForAlert();
+        await browser.acceptAlert();
+    };
+    
+    async getAlertText () {
+        await this.waitForAlert();
+        return await browser.getAlertText();
+    };
+
+    async waitForAlert () {
+        await browser.waitUntil (async () => {
+            return browser.isAlertOpen();
+        })
+    };
+
 
     async findWebElement(locator) {
         await $(locator).waitForDisplayed();
@@ -204,6 +220,8 @@ class Commands {
         })
     };
 
+    
+
     async swapWindow() {
         const allHandles = await this.getAllWindowHandles();    // all open handles
         const handle1 = await this.getCurrentWindowHandle();   // handle before swap
@@ -269,7 +287,9 @@ class Commands {
     };
 
 
-
+    randomNumber(min = Number.MIN_VALUE, max = Number.MAX_VALUE) {
+        return faker.random.number(min, max);
+      }
     // async swapToWindowByPartialPageTitle(title) {
     //     const allHandles = await this.getAllWindowHandles();
     //     for (handle of allHandles) {
