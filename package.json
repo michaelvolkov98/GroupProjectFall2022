@@ -6,8 +6,10 @@
   "scripts": {
     "test": "wdio config/wdio.conf.js --spec ./features/**/*.feature",
     "testalert": "wdio config/wdio.conf.js --spec ./features/alertBox/*.feature",
-    "testsmoke": "wdio config/wdio.conf.js --cucumberOpts.tagExpression='@smoke'"
-
+    "testsmoke": "wdio config/wdio.conf.js --cucumberOpts.tagExpression='@smoke'",
+    "testbs": "wdio config/wdio.conf-BSTACK.js --spec ./features/**/*.feature",
+    "testalertbs": "wdio config/wdio.conf-BSTACK.js --spec ./features/alertBox/*.feature",
+    "testsmokebs": "wdio config/wdio.conf-BSTACK.js --cucumberOpts.tagExpression='@smoke'"
   },
   "repository": {
     "type": "git",
@@ -23,15 +25,18 @@
   "dependencies": {
     "@wdio/cli": "^7.26.0",
     "chai": "^4.3.7",
+    "dotenv": "^16.0.3",
     "faker": "^5.5.3",
     "moment": "^2.29.4"
   },
   "devDependencies": {
     "@wdio/allure-reporter": "^7.26.0",
+    "@wdio/browserstack-service": "^7.26.0",
     "@wdio/cucumber-framework": "^7.26.0",
     "@wdio/local-runner": "^7.26.0",
     "@wdio/spec-reporter": "^7.26.0",
     "chromedriver": "^107.0.3",
-    "wdio-chromedriver-service": "^8.0.0"
+    "wdio-chromedriver-service": "^8.0.0",
+    "wdio-edgedriver-service": "^2.0.0"
   }
 }

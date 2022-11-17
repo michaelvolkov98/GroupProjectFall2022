@@ -1,0 +1,59 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1668705447272' stop='1668705462306'>
+    <name>Contact Alert Box</name>
+    <title>Contact Alert Box</title>
+    <test-cases>
+        <test-case start='1668705447405' status='broken' stop='1668705462304'>
+            <name>Verify that you can not create a user with the same username as an already created account</name>
+            <title>Verify that you can not create a user with the same username as an already created account</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='2-0'/>
+                <label name='feature' value='Contact Alert Box'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='firefox-106.0'/>
+            </parameters>
+            <steps>
+                <step start='1668705447407' status='passed' stop='1668705449505'>
+                    <name>Given I am on the demoblaze homepage</name>
+                    <title>Given I am on the demoblaze homepage</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1668705449505' status='passed' stop='1668705450721'>
+                    <name>When I click the "Contact Us link"</name>
+                    <title>When I click the "Contact Us link"</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1668705450721' status='passed' stop='1668705451463'>
+                    <name>And I click the "Send Message button"</name>
+                    <title>And I click the "Send Message button"</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1668705451463' status='broken' stop='1668705462304'>
+                    <name>Then I verify that the alertbox has the text "Thanks for the message!!"</name>
+                    <title>Then I verify that the alertbox has the text "Thanks for the message!!"</title>
+                    <attachments>
+                        <attachment title='Screenshot' source='90fb6be9-880f-4a78-8de4-d1272025f352-attachment.png' type='image/png' size='395913'/>
+                    </attachments>
+                    <steps/>
+                </step>
+            </steps>
+            <attachments/>
+            <failure>
+                <message>Error: waitUntil condition failed with the following reason: browser.isAlertOpen is not a function</message>
+                <stack-trace>Error: waitUntil condition failed with the following reason: browser.isAlertOpen is not a function
+                    at C:\Users\fpand\Desktop\git\GroupProjectFall2022\node_modules\webdriverio\build\commands\browser\waitUntil.js:70:15
+                    at async Browser.wrapCommandFn (C:\Users\fpand\Desktop\git\GroupProjectFall2022\node_modules\@wdio\utils\build\shim.js:137:29)
+                    at async Commands.waitForAlert (C:\Users\fpand\Desktop\git\GroupProjectFall2022\Utils\Commands.js:21:9)
+                    at async Commands.getAlertText (C:\Users\fpand\Desktop\git\GroupProjectFall2022\Utils\Commands.js:16:9)
+                    at async Homepage.getAlertText (C:\Users\fpand\Desktop\git\GroupProjectFall2022\Pages\Homepage.js:31:16)
+                    at async World.&lt;anonymous> (C:\Users\fpand\Desktop\git\GroupProjectFall2022\step-definitions\alertBox.js:68:24)</stack-trace>
+            </failure>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>

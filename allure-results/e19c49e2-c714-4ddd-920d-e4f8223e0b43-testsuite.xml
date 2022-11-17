@@ -1,0 +1,47 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1668709180227' stop='1668709183278'>
+    <name>Login Alert Box</name>
+    <title>Login Alert Box</title>
+    <test-cases>
+        <test-case start='1668709180400' status='passed' stop='1668709183277'>
+            <name>Verify that the alert box text for logging in without credentials is “Please fill out Username and Password.”</name>
+            <title>Verify that the alert box text for logging in without credentials is “Please fill out Username and Password.”</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='2-1'/>
+                <label name='feature' value='Login Alert Box'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='firefox-106.0'/>
+            </parameters>
+            <steps>
+                <step start='1668709180402' status='passed' stop='1668709181496'>
+                    <name>Given I am on the demoblaze homepage</name>
+                    <title>Given I am on the demoblaze homepage</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1668709181496' status='passed' stop='1668709182520'>
+                    <name>When I click the "Log In link"</name>
+                    <title>When I click the "Log In link"</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1668709182520' status='passed' stop='1668709183186'>
+                    <name>And I click the "Log In button"</name>
+                    <title>And I click the "Log In button"</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1668709183186' status='passed' stop='1668709183277'>
+                    <name>Then I verify that the alertbox has the text "Please fill out Username and Password."</name>
+                    <title>Then I verify that the alertbox has the text "Please fill out Username and Password."</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+            </steps>
+            <attachments/>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>

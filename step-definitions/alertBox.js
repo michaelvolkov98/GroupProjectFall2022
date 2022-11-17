@@ -38,6 +38,7 @@ When(/^I click the "(.+)"$/, async function(fieldName) {
             break;
         case "Sign Up button":
             await hpage.clickSignupButton();
+            await browser.pause(600)
             break;
         case "Contact Us link":
             await hpage.clickContactusLink();
