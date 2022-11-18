@@ -19,10 +19,40 @@ class Commands {
 
     async waitForAlert () {
         await browser.waitUntil (async () => {
-            return browser.isAlertOpen();
+                return async function() {
+                try {
+                await browser.getAlertText();
+          
+                return true;
+              } catch (error) {
+                if (error.name === 'no such alert') {
+                  return false;
+                }
+              }
+            }
+          })
+    };
+
+    
+    async waitForAlert2 () {
+        await browser.waitUntil (async () => {
+            let currentAlertText = await this.getAlertText();
+            return currentAlertText;
         })
     };
 
+    isAlertPresent() {
+        return async function() {
+          try {
+            await browser.getAlertText();
+      
+            return true;
+          } catch (error) {
+              return false;
+        
+          }
+        }
+    };
 
     async findWebElement(locator) {
         await $(locator).waitForDisplayed();
