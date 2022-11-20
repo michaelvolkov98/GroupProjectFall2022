@@ -7,7 +7,6 @@
     "test": "wdio config/wdio.conf.js --spec ./features/**/*.feature",
     "testalert": "wdio config/wdio.conf.js --spec ./features/alertBox/*.feature",
     "testsmoke": "wdio config/wdio.conf.js --cucumberOpts.tagExpression='@smoke'"
-
   },
   "repository": {
     "type": "git",

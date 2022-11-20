@@ -6,7 +6,6 @@ class Commands {
      * Generic function to find a webElement
      * Input: locator
      */
-
     async acceptAlert () {
         await this.waitForAlert();
         await browser.acceptAlert();
