@@ -72,6 +72,11 @@ class Commands {
     async findUndisplayedWebElements(locator) {
         return await $$(locator);
     }
+
+    async isWebElementNotDisplayedWithWait(locator){
+        await $(locator).waitForDisplayed({ reverse: true, timeoutMsg: 'Next button is still displayed after 10 seconds'})
+        return await $(locator).isDisplayed()
+     }
     /**
      * Generic function to click a webElement
      * Input: locator

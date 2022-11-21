@@ -19,7 +19,18 @@ class Homepage {
     contactNameFieldLocator = "//input[@id='recipient-name']"
     contactMessageFieldLocator = "//textarea[@id='message-text']"
     contactSendMessageButtonLocator = "//button[contains(text(),'Send message')]"
-    
+
+    //TC-4
+    welcomeLinkTextLocator = "//a[contains(text(),'Welcome')]"
+
+    //TC-5
+    laptopsCategoryLocator = "//a[text()='Laptops']"
+    nextButtonLocator = "//*[@id='next2']"
+
+    //TC-6
+    phonesCategoryLocator = "//a[text()='Phones']"
+    monitorsCategoryLocator = "//a[text()='Monitors']"
+    allProductsLocator = "//*[@class='card-block']"
 
     // Functions in order to interact with the web-elements on the Homepage
 
@@ -102,6 +113,48 @@ class Homepage {
         await this.clickLoginButton();
     }
 
+    async getWelcomeUsernameText(){
+        return await this.commands.getUndisplayedElementText(this.welcomeLinkTextLocator)
+    }
+
+    async getUsernameWelcomeMsg(){
+        const welcomeMsg = await this.getWelcomeUsernameText(this.welcomeLinkTextLocator)
+        const welcomeMsgArray = welcomeMsg.split(' ');
+        const userName = welcomeMsgArray.pop()
+        return userName;
+    }
+
+    //TC-5
+    
+    async clickLaptopsCategory(categoryName){
+            await this.commands.scrollAndClickWebElement(`=${categoryName}`)
+        }
+    async clickNextButton(){
+        await this.commands.clickWebElement(this.nextButtonLocator)
+    }
+   
+    async isNextButtonDisplayed(){
+        return await this.commands.isWebElementNotDisplayedWithWait(this.nextButtonLocator)
+     }
+
+    //TC-6
+    async getAllDisplayedProducts(){
+        return await this.commands.findWebElements(this.allProductsLocator)
+    } 
+    
+    async isNrOfProductsBetween1and9(){
+        let allProductsArray = await this.getAllDisplayedProducts(this.allProductsLocator);
+        let allProductsNr = allProductsArray.length;
+        console.log(allProductsNr)
+        if (allProductsNr >=1 && allProductsNr <=9){
+            return true;            
+        }
+        else{
+            return false;
+        }
+        
+
+    }
     
     // /** OLD FUNCTIONS
     //  *  Get text from feelslike element
