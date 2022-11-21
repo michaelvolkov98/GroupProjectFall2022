@@ -1,0 +1,107 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1668705402846' stop='1668705424807'>
+    <name>Signup Alert Box</name>
+    <title>Signup Alert Box</title>
+    <test-cases>
+        <test-case start='1668705403026' status='broken' stop='1668705424804'>
+            <name>Verify “Thanks for the message!!” is displayed after clicking on “Contact Us” and entering anything as well as sending it</name>
+            <title>Verify “Thanks for the message!!” is displayed after clicking on “Contact Us” and entering anything as well as sending it</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-2'/>
+                <label name='feature' value='Signup Alert Box'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='Safari-15.6.1'/>
+            </parameters>
+            <steps>
+                <step start='1668705403028' status='passed' stop='1668705410774'>
+                    <name>Given I am on the demoblaze homepage</name>
+                    <title>Given I am on the demoblaze homepage</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1668705410774' status='passed' stop='1668705411420'>
+                    <name>When I click the "Sign Up link"</name>
+                    <title>When I click the "Sign Up link"</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1668705411420' status='passed' stop='1668705412281'>
+                    <name>And I enter "a unique new username" in the "username" field</name>
+                    <title>And I enter "a unique new username" in the "username" field</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1668705412281' status='passed' stop='1668705413295'>
+                    <name>And I enter "QApassword333" in the "password" field</name>
+                    <title>And I enter "QApassword333" in the "password" field</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1668705413295' status='passed' stop='1668705413934'>
+                    <name>And I click the "Sign Up button"</name>
+                    <title>And I click the "Sign Up button"</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1668705413934' status='broken' stop='1668705424804'>
+                    <name>Then I verify that the alertbox has the text "Sign up successful."</name>
+                    <title>Then I verify that the alertbox has the text "Sign up successful."</title>
+                    <attachments>
+                        <attachment title='Screenshot' source='a4ee488b-3b0e-4030-94db-dceba5601763-attachment.png' type='image/png' size='665535'/>
+                    </attachments>
+                    <steps/>
+                </step>
+                <step start='1668705424805' status='canceled' stop='1668705424805'>
+                    <name>When I click okay on the alertbox</name>
+                    <title>When I click okay on the alertbox</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1668705424805' status='canceled' stop='1668705424805'>
+                    <name>And I click the "Sign Up link"</name>
+                    <title>And I click the "Sign Up link"</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1668705424805' status='canceled' stop='1668705424805'>
+                    <name>And I enter "a unique new username" in the "username" field</name>
+                    <title>And I enter "a unique new username" in the "username" field</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1668705424805' status='canceled' stop='1668705424805'>
+                    <name>And I enter "QApassword333" in the "password" field</name>
+                    <title>And I enter "QApassword333" in the "password" field</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1668705424805' status='canceled' stop='1668705424805'>
+                    <name>And I click the "Sign Up button"</name>
+                    <title>And I click the "Sign Up button"</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1668705424805' status='canceled' stop='1668705424806'>
+                    <name>Then I verify that the alertbox has the text "This user already exist."</name>
+                    <title>Then I verify that the alertbox has the text "This user already exist."</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+            </steps>
+            <attachments/>
+            <failure>
+                <message>Error: waitUntil condition failed with the following reason: browser.isAlertOpen is not a function</message>
+                <stack-trace>Error: waitUntil condition failed with the following reason: browser.isAlertOpen is not a function
+                    at C:\Users\fpand\Desktop\git\GroupProjectFall2022\node_modules\webdriverio\build\commands\browser\waitUntil.js:70:15
+                    at async Browser.wrapCommandFn (C:\Users\fpand\Desktop\git\GroupProjectFall2022\node_modules\@wdio\utils\build\shim.js:137:29)
+                    at async Commands.waitForAlert (C:\Users\fpand\Desktop\git\GroupProjectFall2022\Utils\Commands.js:21:9)
+                    at async Commands.getAlertText (C:\Users\fpand\Desktop\git\GroupProjectFall2022\Utils\Commands.js:16:9)
+                    at async Homepage.getAlertText (C:\Users\fpand\Desktop\git\GroupProjectFall2022\Pages\Homepage.js:31:16)
+                    at async World.&lt;anonymous> (C:\Users\fpand\Desktop\git\GroupProjectFall2022\step-definitions\alertBox.js:68:24)</stack-trace>
+            </failure>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>

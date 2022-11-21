@@ -1,0 +1,87 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1668705432773' stop='1668705440251'>
+    <name>Login Alert Box</name>
+    <title>Login Alert Box</title>
+    <test-cases>
+        <test-case start='1668705433067' status='passed' stop='1668705436788'>
+            <name>Verify that the alert box text for logging in without credentials is “Please fill out Username and Password.”</name>
+            <title>Verify that the alert box text for logging in without credentials is “Please fill out Username and Password.”</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='1-1'/>
+                <label name='feature' value='Login Alert Box'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome-107.0.5304.62'/>
+            </parameters>
+            <steps>
+                <step start='1668705433068' status='passed' stop='1668705434101'>
+                    <name>Given I am on the demoblaze homepage</name>
+                    <title>Given I am on the demoblaze homepage</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1668705434101' status='passed' stop='1668705435399'>
+                    <name>When I click the "Log In link"</name>
+                    <title>When I click the "Log In link"</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1668705435399' status='passed' stop='1668705436427'>
+                    <name>And I click the "Log In button"</name>
+                    <title>And I click the "Log In button"</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1668705436427' status='passed' stop='1668705436788'>
+                    <name>Then I verify that the alertbox has the text "Please fill out Username and Password."</name>
+                    <title>Then I verify that the alertbox has the text "Please fill out Username and Password."</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+            </steps>
+            <attachments/>
+        </test-case>
+        <test-case start='1668705436789' status='passed' stop='1668705440251'>
+            <name>Verify that the alert box text for logging in without credentials is “Please fill out Username and Password.”</name>
+            <title>Verify that the alert box text for logging in without credentials is “Please fill out Username and Password.”</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='1-1'/>
+                <label name='feature' value='Login Alert Box'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome-107.0.5304.62'/>
+            </parameters>
+            <steps>
+                <step start='1668705436789' status='passed' stop='1668705437530'>
+                    <name>Given I am on the demoblaze homepage</name>
+                    <title>Given I am on the demoblaze homepage</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1668705437530' status='passed' stop='1668705438810'>
+                    <name>When I click the "Log In link"</name>
+                    <title>When I click the "Log In link"</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1668705438810' status='passed' stop='1668705439820'>
+                    <name>And I click the "Log In button"</name>
+                    <title>And I click the "Log In button"</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1668705439820' status='passed' stop='1668705440250'>
+                    <name>Then test</name>
+                    <title>Then test</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+            </steps>
+            <attachments/>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>

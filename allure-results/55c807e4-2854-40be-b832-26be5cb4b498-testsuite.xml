@@ -1,0 +1,114 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1668705408542' stop='1668705435520'>
+    <name>Login Alert Box</name>
+    <title>Login Alert Box</title>
+    <test-cases>
+        <test-case start='1668705408727' status='broken' stop='1668705422594'>
+            <name>Verify that the alert box text for logging in without credentials is “Please fill out Username and Password.”</name>
+            <title>Verify that the alert box text for logging in without credentials is “Please fill out Username and Password.”</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='2-1'/>
+                <label name='feature' value='Login Alert Box'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='firefox-106.0'/>
+            </parameters>
+            <steps>
+                <step start='1668705408729' status='passed' stop='1668705410175'>
+                    <name>Given I am on the demoblaze homepage</name>
+                    <title>Given I am on the demoblaze homepage</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1668705410175' status='passed' stop='1668705411307'>
+                    <name>When I click the "Log In link"</name>
+                    <title>When I click the "Log In link"</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1668705411307' status='passed' stop='1668705411881'>
+                    <name>And I click the "Log In button"</name>
+                    <title>And I click the "Log In button"</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1668705411881' status='broken' stop='1668705422594'>
+                    <name>Then I verify that the alertbox has the text "Please fill out Username and Password."</name>
+                    <title>Then I verify that the alertbox has the text "Please fill out Username and Password."</title>
+                    <attachments>
+                        <attachment title='Screenshot' source='f3900958-7dda-4e68-baf5-efe2ce1fe084-attachment.png' type='image/png' size='343904'/>
+                    </attachments>
+                    <steps/>
+                </step>
+            </steps>
+            <attachments/>
+            <failure>
+                <message>Error: waitUntil condition failed with the following reason: browser.isAlertOpen is not a function</message>
+                <stack-trace>Error: waitUntil condition failed with the following reason: browser.isAlertOpen is not a function
+                    at C:\Users\fpand\Desktop\git\GroupProjectFall2022\node_modules\webdriverio\build\commands\browser\waitUntil.js:70:15
+                    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+                    at runNextTicks (node:internal/process/task_queues:65:3)
+                    at processTimers (node:internal/timers:499:9)
+                    at async Browser.wrapCommandFn (C:\Users\fpand\Desktop\git\GroupProjectFall2022\node_modules\@wdio\utils\build\shim.js:137:29)
+                    at async Commands.waitForAlert (C:\Users\fpand\Desktop\git\GroupProjectFall2022\Utils\Commands.js:21:9)
+                    at async Commands.getAlertText (C:\Users\fpand\Desktop\git\GroupProjectFall2022\Utils\Commands.js:16:9)
+                    at async Homepage.getAlertText (C:\Users\fpand\Desktop\git\GroupProjectFall2022\Pages\Homepage.js:31:16)
+                    at async World.&lt;anonymous> (C:\Users\fpand\Desktop\git\GroupProjectFall2022\step-definitions\alertBox.js:68:24)</stack-trace>
+            </failure>
+        </test-case>
+        <test-case start='1668705422596' status='broken' stop='1668705435519'>
+            <name>Verify that the alert box text for logging in without credentials is “Please fill out Username and Password.”</name>
+            <title>Verify that the alert box text for logging in without credentials is “Please fill out Username and Password.”</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='2-1'/>
+                <label name='feature' value='Login Alert Box'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='firefox-106.0'/>
+            </parameters>
+            <steps>
+                <step start='1668705422596' status='passed' stop='1668705423281'>
+                    <name>Given I am on the demoblaze homepage</name>
+                    <title>Given I am on the demoblaze homepage</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1668705423281' status='passed' stop='1668705424162'>
+                    <name>When I click the "Log In link"</name>
+                    <title>When I click the "Log In link"</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1668705424162' status='passed' stop='1668705424736'>
+                    <name>And I click the "Log In button"</name>
+                    <title>And I click the "Log In button"</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1668705424736' status='broken' stop='1668705435519'>
+                    <name>Then test</name>
+                    <title>Then test</title>
+                    <attachments>
+                        <attachment title='Screenshot' source='2c0e2a80-40cc-4017-a025-1c758d09925f-attachment.png' type='image/png' size='343931'/>
+                    </attachments>
+                    <steps/>
+                </step>
+            </steps>
+            <attachments/>
+            <failure>
+                <message>Error: waitUntil condition failed with the following reason: browser.isAlertOpen is not a function</message>
+                <stack-trace>Error: waitUntil condition failed with the following reason: browser.isAlertOpen is not a function
+                    at C:\Users\fpand\Desktop\git\GroupProjectFall2022\node_modules\webdriverio\build\commands\browser\waitUntil.js:70:15
+                    at async Browser.wrapCommandFn (C:\Users\fpand\Desktop\git\GroupProjectFall2022\node_modules\@wdio\utils\build\shim.js:137:29)
+                    at async Commands.waitForAlert (C:\Users\fpand\Desktop\git\GroupProjectFall2022\Utils\Commands.js:21:9)
+                    at async Commands.getAlertText (C:\Users\fpand\Desktop\git\GroupProjectFall2022\Utils\Commands.js:16:9)
+                    at async Homepage.getAlertText (C:\Users\fpand\Desktop\git\GroupProjectFall2022\Pages\Homepage.js:31:16)
+                    at async World.&lt;anonymous> (C:\Users\fpand\Desktop\git\GroupProjectFall2022\step-definitions\alertBox.js:17:20)</stack-trace>
+            </failure>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>

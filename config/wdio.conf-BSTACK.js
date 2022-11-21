@@ -1,9 +1,12 @@
 exports.config = {
-    //
+        //
     // ====================
     // Runner Configuration
     // ====================
     //
+
+    user: "xxxxxx",
+    key: "xxxxxx",
     //
     // ==================
     // Specify Test Files
@@ -43,26 +46,45 @@ exports.config = {
     // and 30 processes will get spawned. The property handles how many capabilities
     // from the same test should run tests.
     //
-    maxInstances: 10,
+    maxInstances: 30,
     //
     // If you have trouble getting all important capabilities together, check out the
     // Sauce Labs platform configurator - a great tool to configure your capabilities:
     // https://saucelabs.com/platform/platform-configurator
     //
-    capabilities: [{
+    capabilities: [
+    // ===================
+    // Cross-OS Bstack SUITE
+    // =================== 
     
-        // maxInstances can get overwritten per capability. So if you have an in-house Selenium
-        // grid with only 5 firefox instances available you can make sure that not more than
-        // 5 instances get started at a time.
-        maxInstances: 5,
-        //
-        browserName: 'chrome',
+    {
+        'bstack:options' : {
+          "os" : "OS X",
+          "osVersion" : "Monterey"
+        },
+        "browserName" : "Safari",
+        "browserVersion" : "latest",
         acceptInsecureCerts: true
-        // If outputDir is provided WebdriverIO can capture driver session logs
-        // it is possible to configure which logTypes to include/exclude.
-        // excludeDriverLogs: ['*'], // pass '*' to exclude all driver session logs
-        // excludeDriverLogs: ['bugreport', 'server'],
-    }],
+      },
+    {
+        'bstack:options' : {
+          "os" : "OS X",
+          "osVersion" : "Monterey"
+        },
+        "browserName" : "Chrome",
+        "browserVersion" : "latest",
+        acceptInsecureCerts: true
+      },
+      {
+        'bstack:options' : {
+          "os" : "Windows",
+          "osVersion" : "10"
+        },
+        "browserName" : "Firefox",
+        "browserVersion" : "latest",
+        acceptInsecureCerts: true
+      }
+    ],
     //
     // ===================
     // Test Configurations
@@ -110,7 +132,11 @@ exports.config = {
     // Services take over a specific job you don't want to take care of. They enhance
     // your test setup with almost no effort. Unlike plugins, they don't add new
     // commands. Instead, they hook themselves up into the test process.
-    services: ['chromedriver'],
+    services: [
+      ['browserstack', {
+          preferScenarioName: true
+      }]
+  ],
     
     // Framework you want to run your specs with.
     // The following are supported: Mocha, Jasmine, and Cucumber
@@ -132,7 +158,15 @@ exports.config = {
     // Test reporter for stdout.
     // The only one supported by default is 'dot'
     // see also: https://webdriver.io/docs/dot-reporter
-    reporters: ['spec',['allure', {outputDir: 'allure-results'}]],
+    reporters: ['spec',
+                ['allure', 
+                        {
+                            outputDir: 'allure-results',
+                            disableWebdriverStepsReporting: true,
+                            useCucumberStepReporter: true,
+                            disableWebdriverScreenshotsReporting: false,
+                        }
+]],
 
 
     //
@@ -249,6 +283,12 @@ exports.config = {
      */
     // beforeStep: function (step, scenario, context) {
     // },
+
+    afterStep: async function (step, scenario, { error, duration, passed }, context) {
+      if(error) {
+          await browser.takeScreenshot();
+      }
+  },
     /**
      *
      * Runs after a Cucumber Step.

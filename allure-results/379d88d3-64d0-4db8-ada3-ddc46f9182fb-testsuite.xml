@@ -1,0 +1,95 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1668705403641' stop='1668705416218'>
+    <name>Signup Alert Box</name>
+    <title>Signup Alert Box</title>
+    <test-cases>
+        <test-case start='1668705403832' status='passed' stop='1668705416217'>
+            <name>Verify “Thanks for the message!!” is displayed after clicking on “Contact Us” and entering anything as well as sending it</name>
+            <title>Verify “Thanks for the message!!” is displayed after clicking on “Contact Us” and entering anything as well as sending it</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='1-2'/>
+                <label name='feature' value='Signup Alert Box'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome-107.0.5304.62'/>
+            </parameters>
+            <steps>
+                <step start='1668705403834' status='passed' stop='1668705405256'>
+                    <name>Given I am on the demoblaze homepage</name>
+                    <title>Given I am on the demoblaze homepage</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1668705405256' status='passed' stop='1668705406502'>
+                    <name>When I click the "Sign Up link"</name>
+                    <title>When I click the "Sign Up link"</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1668705406502' status='passed' stop='1668705407769'>
+                    <name>And I enter "a unique new username" in the "username" field</name>
+                    <title>And I enter "a unique new username" in the "username" field</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1668705407769' status='passed' stop='1668705408923'>
+                    <name>And I enter "QApassword333" in the "password" field</name>
+                    <title>And I enter "QApassword333" in the "password" field</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1668705408923' status='passed' stop='1668705409932'>
+                    <name>And I click the "Sign Up button"</name>
+                    <title>And I click the "Sign Up button"</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1668705409932' status='passed' stop='1668705411146'>
+                    <name>Then I verify that the alertbox has the text "Sign up successful."</name>
+                    <title>Then I verify that the alertbox has the text "Sign up successful."</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1668705411146' status='passed' stop='1668705411359'>
+                    <name>When I click okay on the alertbox</name>
+                    <title>When I click okay on the alertbox</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1668705411359' status='passed' stop='1668705412583'>
+                    <name>And I click the "Sign Up link"</name>
+                    <title>And I click the "Sign Up link"</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1668705412584' status='passed' stop='1668705413483'>
+                    <name>And I enter "a unique new username" in the "username" field</name>
+                    <title>And I enter "a unique new username" in the "username" field</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1668705413483' status='passed' stop='1668705414410'>
+                    <name>And I enter "QApassword333" in the "password" field</name>
+                    <title>And I enter "QApassword333" in the "password" field</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1668705414410' status='passed' stop='1668705415407'>
+                    <name>And I click the "Sign Up button"</name>
+                    <title>And I click the "Sign Up button"</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1668705415407' status='passed' stop='1668705416216'>
+                    <name>Then I verify that the alertbox has the text "This user already exist."</name>
+                    <title>Then I verify that the alertbox has the text "This user already exist."</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+            </steps>
+            <attachments/>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>
