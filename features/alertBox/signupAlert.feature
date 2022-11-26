@@ -1,6 +1,7 @@
-@alertbox @smoke
+@alertbox @signup
 Feature: Signup Alert Box
 
+@box
     Scenario: Verify “Thanks for the message!!” is displayed after clicking on “Contact Us” and entering anything as well as sending it
         Given I am on the demoblaze homepage
         When I click the "Sign Up link"
