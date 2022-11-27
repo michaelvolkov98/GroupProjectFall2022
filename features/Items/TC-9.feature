@@ -6,7 +6,7 @@ Feature: Price match
         When I click on "Samsung galaxy s6"
         Then I verify price displayed is same as price displayed in homepage
         When I click on Add to cart
-        And I click okay on the alertbox
+        #And I click okay on the alertbox
         And I click on Cart
         Then I verify price displayed is same as price displayed in product description
 
