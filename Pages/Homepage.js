@@ -67,6 +67,7 @@ class Homepage {
     };
 
     async clickSignupLink() {
+        await this.commands.waitForNoAlert();
         await this.commands.clickWebElement(this.signupLinkLocator);
     };
 
