@@ -22,4 +22,4 @@ jobs:
         check-latest: true
         cache: 'npm'
     - run: npm install
-    - run: npm run test
+    - run: npm run testalert
