@@ -6,9 +6,16 @@
   "scripts": {
     "test": "wdio config/wdio.conf.js --spec ./features/**/*.feature",
     "testalert": "wdio config/wdio.conf.js --spec ./features/alertBox/*.feature",
+    "testitems": "wdio config/wdio.conf.js --spec ./features/items/*.feature",
+    "testshopping": "wdio config/wdio.conf.js --spec ./features/shoppingCart/*.feature",
+    "testthings": "wdio config/wdio.conf.js --spec ./features/thingsOnDisplay/*.feature",
     "testsmoke": "wdio config/wdio.conf.js --cucumberOpts.tagExpression='@smoke'",
+    "testbox": "wdio config/wdio.conf.js --cucumberOpts.tagExpression='@box'",
     "testbs": "wdio config/wdio.conf-BSTACK.js --spec ./features/**/*.feature",
     "testalertbs": "wdio config/wdio.conf-BSTACK.js --spec ./features/alertBox/*.feature",
+    "testitemsbs": "wdio config/wdio.conf-BSTACK.js --spec ./features/items/*.feature",
+    "testshoppingbs": "wdio config/wdio.conf-BSTACK.js --spec ./features/shoppingCart/*.feature",
+    "testthingsbs": "wdio config/wdio.conf-BSTACK.js --spec ./features/thingsOnDisplay/*.feature",
     "testsmokebs": "wdio config/wdio.conf-BSTACK.js --cucumberOpts.tagExpression='@smoke'"
   },
   "repository": {

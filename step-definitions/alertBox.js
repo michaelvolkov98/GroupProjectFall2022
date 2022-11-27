@@ -34,11 +34,12 @@ When(/^I click the "(.+)"$/, async function(fieldName) {
             await hpage.clickLoginButton();
             break;
         case "Sign Up link":
+            await browser.pause(700)
             await hpage.clickSignupLink();
             break;
         case "Sign Up button":
             await hpage.clickSignupButton();
-            await browser.pause(600)
+            await browser.pause(700)
             break;
         case "Contact Us link":
             await hpage.clickContactusLink();

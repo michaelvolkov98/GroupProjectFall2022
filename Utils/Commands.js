@@ -6,7 +6,6 @@ class Commands {
      * Generic function to find a webElement
      * Input: locator
      */
-
     async acceptAlert () {
         await this.waitForAlert();
         await browser.acceptAlert();
@@ -25,14 +24,27 @@ class Commands {
           
                 return true;
               } catch (error) {
-                if (error.name === 'no such alert') {
-                  return false;
-                }
+    
+                return false;
+
               }
             }
-          })
+          }, { timeout: 2000, timeoutMsg: 'expected alert to be there' })
     };
 
+    async waitForNoAlert () {
+        await browser.waitUntil (async () => {
+                return async function() {
+                try {
+                await browser.getAlertText();
+          
+                return false;
+              } catch (error) {
+                  return true;
+              }
+            }
+          }, { timeout: 2000, timeoutMsg: 'expected alert to close' },)
+    };
     
     async waitForAlert2 () {
         await browser.waitUntil (async () => {

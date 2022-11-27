@@ -1,6 +1,13 @@
 # GroupProjectFall2022
 
-To run all feature files: npx wdio wdio.conf.js
+To run all feature files: npm run test
+
+To run all alertbox feature files: npm run testalert
+To run all items feature files: npm run testitems
+To run all shoppingcart feature files: npm run testshopping
+To run all Things on display  feature files: npm run testthings
+
+*** TO RUN ON BSTACK  ENTER CREDENTIALS IN config\wdio.conf-BSTACK.js and ad "bs" to the command e.g. "npm run testbs"
 
 To run a specific feature file: npx wdio run wdio.conf.js --spec ./features-file-relative-path
 eg:
@@ -21,7 +28,10 @@ To open allure report:
     allure open
     Note: make sure to be in the folder which contains allure-report
 
-$ npx wdio config/wdio.conf-bstk.js --cucumberOpts.tagExpression '@test'
+
+Examples:
+
+npx wdio config/wdio.conf-bstk.js --cucumberOpts.tagExpression '@test'
 npx wdio config/wdio.conf.js --cucumberOpts.tagExpression '@all'
 npx wdio config/wdio.conf-bstk.js --cucumberOpts.tagExpression '@all'
-$ npx wdio config/wdio.conf.js --cucumberOpts.tagExpression '@test'
+npx wdio config/wdio.conf.js --cucumberOpts.tagExpression '@test'

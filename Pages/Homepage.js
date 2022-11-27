@@ -1,6 +1,6 @@
 const Commands = require("../Utils/Commands");
 const MyFakerFunctions = require("../Utils/MyFakerFunctions");
-
+const moment = require("moment");
 class Homepage {
 
     commands = new Commands()
@@ -32,6 +32,18 @@ class Homepage {
     monitorsCategoryLocator = "//a[text()='Monitors']"
     allProductsLocator = "//*[@class='card-block']"
 
+    //TC - 1
+    phonesMultiple = "//td[contains(text(),'Samsung galaxy s6')]"
+    pricesMultiple = "//td[contains(text(),'360')]"
+
+    // TC - 2
+    placeOrder = "//button[contains(text(),'Place Order')]"
+    addNameBox = "//input[@id='name']"
+    addCardBox = "//input[@id='card']"
+    purchaseTextBox = "//*[@class='lead text-muted ']"
+
+    // TC - 3
+    checkmark = '//div[@class="sa-icon sa-success animate" ]'
     // Functions in order to interact with the web-elements on the Homepage
 
     uniqueNumber(min,max){
@@ -55,6 +67,7 @@ class Homepage {
     };
 
     async clickSignupLink() {
+        await this.commands.waitForNoAlert();
         await this.commands.clickWebElement(this.signupLinkLocator);
     };
 
@@ -157,7 +170,65 @@ class Homepage {
         
 
     }
-    
+    // TC-  1
+    async phoneArray(){
+        let Array = []
+        let i = 0;
+        let phones =  await $$(this.phonesMultiple)
+        for (const phone of phones){
+            let newArray = await phone.getText()
+            let newestArray = newArray.substring(0,1)
+            Array[i] = parseInt(newestArray)
+            i++;
+            for (let t = 0; t < Array.length-1; t++){
+                if(!(Array[i] === 'Samsung galaxy s6')){
+                } else {
+                    return false
+                }
+            }
+       } return true
+    }
+    async pricesArray(){
+        let Array = []
+        let i = 0;
+        let prices =  await $$(this.pricesMultiple)
+        for (const price of prices){
+            let newArray = await price.getText()
+            let newestArray = newArray.substring(1)
+            Array[i] = parseInt(newestArray)
+            i++;
+            for (let t = 0; t < Array.length-1; t++){
+                if(!(Array[t+1] - Array[i] >= 0)){
+                } else {
+                    return false
+                }
+            }
+       } return true
+    }
+    // TC - 2
+async clickPlaceOrderButton(){
+    await this.commands.clickWebElement(this.placeOrder)
+}
+async addName(){
+    await this.commands.typeInWebElement(this.addNameBox, "name")
+}
+async addCard(){
+    await this.commands.typeInWebElement(this.addCardBox, "9")
+}
+async purchaseText(){
+    await this.commands.getThisElementText(this.purchaseTextBox)
+}
+    // TC - 3
+async checkmarkCheck(){
+    await this.commands.isElementDisplayed(this.checkmark)
+}
+async todayDate(){
+    moment().format('L')
+}
+async datesWrong (){
+    this.todayDate() === parseInt(this.purchaseText().substr(56, 10))
+}
+
     // /** OLD FUNCTIONS
     //  *  Get text from feelslike element
     //  */
