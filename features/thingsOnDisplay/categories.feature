@@ -1,4 +1,4 @@
-@categories @smoke 
+@categories @regression 
 Feature: Product categories
 
     @tc-5

@@ -126,8 +126,10 @@ class Homepage {
         await this.clickLoginButton();
     }
 
+    //TC-4
     async getWelcomeUsernameText(){
-        return await this.commands.getUndisplayedElementText(this.welcomeLinkTextLocator)
+        return await this.commands.getElementText(this.welcomeLinkTextLocator)
+
     }
 
     async getUsernameWelcomeMsg(){
@@ -158,7 +160,7 @@ class Homepage {
     async isNrOfProductsBetween1and9(){
         let allProductsArray = await this.getAllDisplayedProducts(this.allProductsLocator);
         let allProductsNr = allProductsArray.length;
-        console.log(allProductsNr)
+        
         if (allProductsNr >=1 && allProductsNr <=9){
             return true;            
         }
