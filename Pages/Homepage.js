@@ -208,7 +208,7 @@ class Homepage {
     }
     // TC - 2
 async clickPlaceOrderButton(){
-    await this.commands.clickWebElement(this.placeOrder)
+    await this.commands.clickUndisplayedWebElement(this.placeOrder)
 }
 async clickPurchaseButton(){
     await this.commands.clickWebElement(this.purchaseButtonLocator)
