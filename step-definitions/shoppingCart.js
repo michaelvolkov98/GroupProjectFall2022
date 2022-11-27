@@ -24,10 +24,10 @@ When(/^I go to cart$/, async function() {
     await items.clickCart();
 });
 Then(/^I verify both items have their names$/, async function() {
-    expect(await hpage.phoneArray).to.be.true
+    expect(await hpage.phoneArray()).to.be.true
 });
 Then(/^they cost the same$/, async function() {
-    expect(await hpage.pricesArray).to.be.true
+    expect(await hpage.pricesArray()).to.be.true
 });
 // TC - 2
 When(/^I click checkout$/, async function() {
@@ -40,10 +40,13 @@ When(/^I add a credit-card number$/, async function() {
     await hpage.addCard();
 });
 Then(/^I verify that the thank you screen has the same name and card number after I click purchase$/, async function() {
-    expect(await hpage.purchaseText).to.contain("name" && "9")
+    await hpage.clickPurchaseButton();
+    expect(await hpage.purchaseText()).to.contain("name");
+    expect(await hpage.purchaseText()).to.contain("9")
 });
 // TC - 3
 Then(/^I verify there is green checkmark and the date is wrong$/, async function() {
-    expect(hpage.checkmarkCheck).to.be.true
-    expect(hpage.datesWrong).to.be.false
+    await hpage.clickPurchaseButton();
+    expect(await hpage.checkmarkCheck()).to.be.true
+    expect(await hpage.purchaseText()).to.contain(await hpage.todayDateMinus1());
 });

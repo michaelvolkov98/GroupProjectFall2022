@@ -41,6 +41,7 @@ class Homepage {
     addNameBox = "//input[@id='name']"
     addCardBox = "//input[@id='card']"
     purchaseTextBox = "//*[@class='lead text-muted ']"
+    purchaseButtonLocator = "//button[contains(text(),'Purchase')]"
 
     // TC - 3
     checkmark = '//div[@class="sa-icon sa-success animate" ]'
@@ -209,6 +210,9 @@ class Homepage {
 async clickPlaceOrderButton(){
     await this.commands.clickWebElement(this.placeOrder)
 }
+async clickPurchaseButton(){
+    await this.commands.clickWebElement(this.purchaseButtonLocator)
+}
 async addName(){
     await this.commands.typeInWebElement(this.addNameBox, "name")
 }
@@ -216,17 +220,25 @@ async addCard(){
     await this.commands.typeInWebElement(this.addCardBox, "9")
 }
 async purchaseText(){
-    await this.commands.getThisElementText(this.purchaseTextBox)
+    return await this.commands.getElementText(this.purchaseTextBox)
 }
+
     // TC - 3
 async checkmarkCheck(){
-    await this.commands.isElementDisplayed(this.checkmark)
+    return await this.commands.isWebElementEnabled(this.checkmark)
 }
 async todayDate(){
-    moment().format('L')
+    return moment().format('L')
 }
+async todayDateMinus1(){
+    return moment().subtract(1, 'months').format('D/M/YYYY');
+}
+async datesCheck (){
+    return this.purchaseText().inclcudes(`${this.todayDateMinus1}`);
+}
+
 async datesWrong (){
-    this.todayDate() === parseInt(this.purchaseText().substr(56, 10))
+    return this.todayDate() === parseInt(this.purchaseText().substr(56, 10))
 }
 
     // /** OLD FUNCTIONS
