@@ -1,5 +1,6 @@
 // const { Given } = require("@wdio/cucumber-framework");
 
+const { default: BrowserstackLauncherService } = require("@wdio/browserstack-service/build/launcher");
 const { When, Then } = require("@wdio/cucumber-framework");
 const { expect } = require("chai");
 const ItemsPage = require("../Pages/ItemsPage");
@@ -24,6 +25,7 @@ When(/^I click on "(.+)"$/, async function(fieldname){
 })
 When(/^I click on Add to cart$/, async function(){
     await ipage.clickAddToCart();
+    await browser.pause(2000)
 })
 When(/^I click on Home$/, async function(){
     await ipage.clickHome();
