@@ -26,4 +26,5 @@ jobs:
     - name: Install Dependencies
       run: npm install
     - name: Tests
-      run: npm run testalert
+      run: npm run test
+      
